@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>Sales Dashboard</span>
+            </div>
+            <nav>
+                <a href="#" class="active"><i class="fas fa-home"></i> Overview</a>
+                <a href="#"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <a href="#"><i class="fas fa-dollar-sign"></i> Revenue</a>
+                <a href="#"><i class="fas fa-users"></i> Customers</a>
+            </nav>
+        </div>
+
+        <main class="main-content">
+            <div class="header">
+                <div class="date-filter">
+                    <select id="timeRange">
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="card revenue">
+                    <h3>Total Revenue</h3>
+                    <p class="number">$124,563</p>
+                    <span class="growth positive">+12.5%</span>
+                </div>
+                <div class="card orders">
+                    <h3>Total Orders</h3>
+                    <p class="number">1,243</p>
+                    <span class="growth positive">+8.3%</span>
+                </div>
+                <div class="card customers">
+                    <h3>New Customers</h3>
+                    <p class="number">156</p>
+                    <span class="growth positive">+5.2%</span>
+                </div>
+                <div class="card conversion">
+                    <h3>Conversion Rate</h3>
+                    <p class="number">2.4%</p>
+                    <span class="growth negative">-1.1%</span>
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="ordersChart"></canvas>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <h2>Recent Sales</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12345</td>
+                            <td>John Doe</td>
+                            <td>Product A</td>
+                            <td>$230</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#12346</td>
+                            <td>Jane Smith</td>
+                            <td>Product B</td>
+                            <td>$180</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
